@@ -19,7 +19,9 @@ app.listen(PORT, () => {
     console.log(`App is listening at ${PORT}`);
 });
 
-const token = process.env.TOKEN;
 
-// Create a bot instance
-const bot = createBot(token);
+const token = process.env.TOKEN;
+const requiredChannelId = process.env.REQUIRED_CHANNEL_ID;
+const logsChannelId = process.env.LOGS_CHANNEL_ID;
+
+createBot(token, requiredChannelId, logsChannelId);
